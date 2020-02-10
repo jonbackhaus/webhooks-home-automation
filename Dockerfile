@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y git
 
 RUN git clone --depth 1 https://github.com/jonbackhaus/webhooks-home-automation.git /repo
 
-FROM node:latest-alpine as runner
+FROM node:alpine as runner
 
 WORKDIR /repo
 
