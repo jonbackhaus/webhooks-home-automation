@@ -14,9 +14,9 @@ COPY --from=builder /repo /repo
 
 RUN npm install
 
-COPY ./index.js /repo/index.js
-
-EXPOSE 12000
+ENV IFTTT_KEY IFTTT_KEY
+ENV IFTTT_JOB IFTTT_JOB
+ENV TRIGGER_PORT TRIGGER_PORT
 
 ENTRYPOINT ["node"]
 
