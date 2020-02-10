@@ -12,7 +12,7 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
   //console.log('Got webhook for', payload.event);
 
   var options = {
-    method: 'PUT',
+    method: 'POST',
     json: true,
   };
 
