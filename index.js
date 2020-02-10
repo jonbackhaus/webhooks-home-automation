@@ -49,17 +49,17 @@ app.post('/', upload.single('thumb'), function (req, res, next) {
   switch (payload.Metadata.librarySectionType) {
     case 'show':
       options.body = { value1: payload.Account.title, value2: payload.Player.title, value3: (payload.Metadata.grandparentTitle + ' - ' + payload.Metadata.title) };
+      request(options);
       break;
     case 'movie':
       options.body = { value1: payload.Account.title, value2: payload.Player.title, value3: payload.Metadata.title };
+      request(options);
       break;
     case 'artist':
       options.body = { value1: payload.Account.title, value2: payload.Player.title, value3: (payload.Metadata.grandparentTitle + ' - ' + payload.Metadata.parentTitle + ' - ' + payload.Metadata.title) };
       break;
     default:
   }
-
-  request(options);
 
   res.sendStatus(200);
 });
